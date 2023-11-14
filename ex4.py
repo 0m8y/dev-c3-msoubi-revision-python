@@ -20,11 +20,18 @@ def max(number_list):
     print("max: " + str(max), end="")
     return max
 
+def min(number_list):
+    min = number_list[0]
+    for number in number_list:
+        if number < min: min = number
+    print("min: " + str(min), end="")
+    return min
+
 def main():
     number_list = [1, 45, 35, 92, 41, 20, 36, 57, 28, 65]
     mean(number_list)
     max(number_list)
-    
+    min(number_list)
 
 
 
