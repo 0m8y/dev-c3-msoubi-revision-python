@@ -29,7 +29,6 @@ def calculator(calcul):
             return calculator(simple_calcul(division, iterator, calcul))
         iterator += 1
     iterator = 0
-
     for element in calcul :
         if element == "+" :
             return calculator(simple_calcul(addition, iterator, calcul))
@@ -49,9 +48,22 @@ def main():
     pattern = re.compile(r"(-?[1-9]+|[+-/*])")
     calcul_regex = re.findall(pattern, calcul_input)
 
+
     if calcul_regex:
+        if calcul_regex[-1] in '+-/*':
+            print("Calcul invalide")
+            exit(84)
+
+        iterator = 0
+        for element in calcul_regex : 
+            elem2 = calcul_regex[iterator - 1]
+            if iterator != 0 and elem2 != "+" and elem2 != "-" and elem2 != "*" and elem2 != "/":
+                if len(element) > 1 and element[0] == '-':
+                    calcul_regex[iterator] = calcul_regex[iterator].replace('-', '')
+                    calcul_regex.insert(iterator, '-')
+            iterator += 1
+
         print("result is " + calculator(calcul_regex))
-        
     else:
         print("Calcul invalide")
         exit(84)
