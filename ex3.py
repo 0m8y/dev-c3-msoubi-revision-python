@@ -1,7 +1,7 @@
 import re
 
 def simple_calcul(func, position, calcul_list):
-    calcul_list[position] = func(calcul_list[position - 1], calcul_list[position + 1])
+    calcul_list[position] = str(func(int(calcul_list[position - 1]), int(calcul_list[position + 1])))
     calcul_list.pop(position - 1)
     calcul_list.pop(position + 1)
     return calcul_list
