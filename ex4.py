@@ -13,9 +13,17 @@ def mean(number_list):
     print(") / " + str(len(number_list)) + " = " + str(result))
     return result
 
+def max(number_list):
+    max = number_list[0]
+    for number in number_list:
+        if number > max: max = number
+    print("max: " + str(max), end="")
+    return max
+
 def main():
     number_list = [1, 45, 35, 92, 41, 20, 36, 57, 28, 65]
     mean(number_list)
+    max(number_list)
     
 
 
