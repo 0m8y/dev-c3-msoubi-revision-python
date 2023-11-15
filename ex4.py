@@ -17,14 +17,14 @@ def max(number_list):
     max = number_list[0]
     for number in number_list:
         if number > max: max = number
-    print("max: " + str(max), end="")
+    print("max: " + str(max))
     return max
 
 def min(number_list):
     min = number_list[0]
     for number in number_list:
         if number < min: min = number
-    print("min: " + str(min), end="")
+    print("min: " + str(min))
     return min
 
 def main():
